@@ -1,0 +1,13 @@
+.c-characters-list-layout {
+  padding: 50px 30px;
+  &__results {
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+  &__list {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
