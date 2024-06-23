@@ -1,0 +1,13 @@
+@keyframes load {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.c-loader {
+  width: 100%;
+  height: 5px; /* Altura de la línea del loader */
+  background-color: #f00; /* Color de la línea (rojo en este caso) */
+  z-index: 1000; /* Asegura que esté encima de todo */
+  transition: width .1s ease-out; /* Transición suave para el avance */
+  animation: load .5s linear forwards;
+}

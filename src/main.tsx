@@ -7,6 +7,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query';
+import { FavsProvider } from './contexts/favsContext.tsx';
 
 const queryConfig: DefaultOptions = {
   queries: {
@@ -21,8 +22,10 @@ const queryClient = new QueryClient({
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
-    <QueryClientProvider client={queryClient}>
-      <App />
-    </QueryClientProvider>
+    <FavsProvider>
+      <QueryClientProvider client={queryClient}>
+        <App />
+      </QueryClientProvider>
+    </FavsProvider>
   </BrowserRouter>,
 );

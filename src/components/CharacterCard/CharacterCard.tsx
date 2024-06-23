@@ -1,8 +1,9 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
+import { FavButton } from '../FavButton/FavButton';
 
 type TProps = {
-  id: number;
+  id: string;
   name: string;
   image?: string;
 };
@@ -18,9 +19,9 @@ export const CharacterCard: FC<TProps> = ({ id, name, image }) => {
       </div>
       <div className="c-character-card__name-container">
         <span className="c-character-card__name-container__name">{name}</span>
-        <img
-          className="c-character-card__name-container__fav"
-          src="fav_on.svg"
+        <FavButton
+          className="c-character-card__name-container__fav-button"
+          character={{ id, name, image }}
         />
       </div>
     </Link>

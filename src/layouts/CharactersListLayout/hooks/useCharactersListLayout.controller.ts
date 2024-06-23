@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ICharacter } from '../../../models/character';
 
 export const useCharactersListLayoutController = (characters: ICharacter[]) => {
@@ -6,7 +6,7 @@ export const useCharactersListLayoutController = (characters: ICharacter[]) => {
     useState<ICharacter[]>(characters);
   const [searcherState, setSearcherState] = useState<string>('');
 
-  const onChangeSearcher = (e: ChangeEvent<HTMLInputElement>) => {
+  const onChangeSearcher = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setSearcherState(value);
 

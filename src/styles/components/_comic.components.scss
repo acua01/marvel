@@ -1,9 +1,17 @@
 .c-comic {
-  display: inline-block;
-  width: 179px;
-  &__image {
+  min-width: 179px;
+  &__image-container {
     width: 100%;
-    min-height: 269px;
+    height: 269px;
+    & > img {
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-drag: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+    }
   }
   &__title {
     font-weight: 600;

@@ -1,13 +1,22 @@
-import { FC } from 'react';
+import { FC, useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { FavsContext } from '../../../../contexts/favsContext';
+import { FavOnIcon } from '../../../../icons/FavOnIcon';
 
 export const Header: FC = () => {
+  const favsContext = useContext(FavsContext);
+  const { favs } = favsContext;
+
   return (
     <header className="c-main-layout__header">
-      <img src="logo.svg" />
-      <div className="c-main-layout__header__counter">
-        <img src="fav_on.svg" />
-        <span>3</span>
-      </div>
+      <Link to={'/'}>
+        <img src="logo.svg" />
+      </Link>
+
+      <Link className="c-main-layout__header__counter" to={'/favs'}>
+        <FavOnIcon />
+        <span>{favs.length}</span>
+      </Link>
     </header>
   );
 };
