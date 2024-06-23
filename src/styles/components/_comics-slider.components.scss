@@ -1,0 +1,11 @@
+.c-comics-slider {
+  width: 63.5%;
+  margin-top: 20px;
+  &__title {
+    text-transform: uppercase;
+    font-size: 32px;
+  }
+  &__comics-container {
+    gap: 10px;
+  }
+}

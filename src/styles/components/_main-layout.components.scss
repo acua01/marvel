@@ -1,0 +1,19 @@
+.c-main-layout {
+  &__header {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    padding: 10px 30px;
+    &__counter {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 400;
+    }
+  }
+  &__main {
+    width: 100%;
+  }
+}

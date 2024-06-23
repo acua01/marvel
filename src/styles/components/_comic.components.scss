@@ -1,0 +1,11 @@
+.c-comic {
+  display: inline-block;
+  width: 179px;
+  &__image {
+    width: 100%;
+    min-height: 269px;
+  }
+  &__title {
+    font-weight: 600;
+  }
+}
