@@ -3,6 +3,7 @@ import { ComicsSlider } from './components/ComicsSlider/ComicsSlider';
 import { FavButton } from '../../components/FavButton/FavButton';
 import { Loader } from '../../components/Loader/Loader';
 import { useCharacterDetailsPageController } from './hooks/useCharacterDetailsPage.controller';
+import { ErrorMessage } from '../../components/ErrorMessage/ErrorMessage';
 
 const CharacterDetails: FC = () => {
   const { character, details, comics, isLoading, errorComics, errorDetails } =
@@ -10,7 +11,9 @@ const CharacterDetails: FC = () => {
 
   if (isLoading) return <Loader />;
   if (errorComics || errorDetails)
-    return <p>An error has occurred getting character details</p>;
+    return (
+      <ErrorMessage message="An error has occurred getting character details" />
+    );
   if (!character || !details || !comics) return null;
 
   return (
