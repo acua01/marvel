@@ -1,13 +1,11 @@
-import { axiosClient } from '../api/axios-client';
+import { axiosClient } from '../frameworks/api/axiosClient';
 import { API_CREDENTIALS } from '../constants/api';
-import { IComic } from '../models/comic';
+import { IComic } from '../models/Comic.model';
 
 export const getComicsByCharacterAdapter = async (characterId: string) => {
   const response = await axiosClient.get(
     `/v1/public/characters/${characterId}/comics?${API_CREDENTIALS}`,
   );
-
-  console.log(response.data.data.results);
 
   type TApiItem = {
     title: string;
