@@ -3,10 +3,12 @@ import { useCharactersListController } from './hooks/useCharactersList.controlle
 import { CharactersListLayout } from '../../layouts/CharactersListLayout/CharactersListLayout';
 import { Loader } from '../../components/Loader/Loader';
 
-export const CharactersList: FC = () => {
+const CharactersList: FC = () => {
   const { data, isLoading } = useCharactersListController();
 
   if (isLoading) return <Loader />;
 
   return <CharactersListLayout characters={data || []} />;
 };
+
+export default CharactersList;

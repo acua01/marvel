@@ -8,6 +8,7 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query';
 import { FavsProvider } from './contexts/favsContext.tsx';
+import 'animate.css';
 
 const queryConfig: DefaultOptions = {
   queries: {

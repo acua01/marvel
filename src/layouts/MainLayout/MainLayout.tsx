@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Header } from './components/Header/Header';
-import { AppRoutes } from '../../routes';
+import AppRoutes from '../../routes';
 
 export const MainLayout: FC = () => {
   return (
