@@ -1,0 +1,1 @@
+import{r,F as a,j as o}from"./index-Bc71I7BR.js";import{C as e}from"./CharactersListLayout-DGhpqibG.js";import{u as n}from"./useScrollUp-B8nIR8Jv.js";const c=()=>{const s=r.useContext(a),{favs:t}=s;return n(),{favs:t}},i=()=>{const{favs:s}=c();return o.jsx(e,{characters:s})};export{i as default};
