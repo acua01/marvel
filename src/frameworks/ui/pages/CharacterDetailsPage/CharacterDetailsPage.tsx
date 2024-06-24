@@ -1,0 +1,45 @@
+import { FC } from 'react';
+import { ComicsSlider } from './components/ComicsSlider/ComicsSlider';
+import { FavButton } from '../../components/FavButton/FavButton';
+import { Loader } from '../../components/Loader/Loader';
+import { useCharacterDetailsPageController } from './hooks/useCharacterDetailsPage.controller';
+
+const CharacterDetails: FC = () => {
+  const { character, details, comics, isLoading, errorComics, errorDetails } =
+    useCharacterDetailsPageController();
+
+  if (isLoading) return <Loader />;
+  if (errorComics || errorDetails)
+    return <p>An error has occurred getting character details</p>;
+  if (!character || !details || !comics) return null;
+
+  return (
+    <div className="c-character-details">
+      <div className="c-character-details__character">
+        <div className="c-character-details__character__content">
+          <div className="c-character-details__character__content__image-container">
+            <img
+              className="c-character-details__character__content__image-container__image"
+              src={details.image ?? 'image_not_found.svg'}
+            />
+          </div>
+          <div className="c-character-details__character__content__info-container">
+            <div className="c-character-details__character__content__info-container__title">
+              <h1>{details.name}</h1>
+              <FavButton
+                className="c-character-details__character__content__info-container__title__fav-button"
+                character={character}
+              />
+            </div>
+            <p className="c-character-details__character__content__info-container__description">
+              {details.description ?? 'Description not found'}
+            </p>
+          </div>
+        </div>
+      </div>
+      <ComicsSlider comics={comics} />
+    </div>
+  );
+};
+
+export default CharacterDetails;

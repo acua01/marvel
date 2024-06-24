@@ -1,6 +1,6 @@
-import { axiosClient } from '../api/axios-client';
+import { axiosClient } from '../frameworks/api/axiosClient';
 import { API_CREDENTIALS } from '../constants/api';
-import { ICharacter } from '../models/character';
+import { ICharacter, ICharacterDetails } from '../models/Character.model';
 
 export const getCharactersAdapter = async () => {
   const response = await axiosClient.get(
@@ -32,8 +32,9 @@ export const getCharacterDetailsAdapter = async (characterId: string) => {
   const data = response.data.data.results[0];
 
   return {
+    id: data.id,
     name: data.name,
     description: data.description,
     image: `${data.thumbnail.path}.${data.thumbnail.extension}`,
-  };
+  } as ICharacterDetails;
 };
