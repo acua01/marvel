@@ -9,19 +9,25 @@ type TProps = {
 };
 
 export const CharacterCard: FC<TProps> = ({ id, name, image }) => (
-  <Link className="c-character-card" to={`/${id}`}>
-    <div className="c-character-card__image-container">
-      <img
-        className="c-character-card__image-container__image"
-        src={image ? image : 'image_not_found.svg'}
-      />
-    </div>
-    <div className="c-character-card__name-container">
-      <span className="c-character-card__name-container__name">{name}</span>
-      <FavButton
-        className="c-character-card__name-container__fav-button"
-        character={{ id, name, image }}
-      />
-    </div>
-  </Link>
+  <li>
+    <Link className="c-character-card" to={`/${id}`} aria-labelledby={name}>
+      <figure className="c-character-card__image-container">
+        <img
+          className="c-character-card__image-container__image"
+          src={image ?? 'image_not_found.svg'}
+          alt={name}
+          title={name}
+        />
+      </figure>
+      <article className="c-character-card__name-container">
+        <p className="c-character-card__name-container__name" id={name}>
+          {name}
+        </p>
+        <FavButton
+          className="c-character-card__name-container__fav-button"
+          character={{ id, name, image }}
+        />
+      </article>
+    </Link>
+  </li>
 );

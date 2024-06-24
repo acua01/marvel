@@ -13,14 +13,17 @@ export const CharactersListLayout: FC<TProps> = ({ characters }) => {
     useCharactersListLayoutController(characters);
 
   return (
-    <div className="c-characters-list-layout">
+    <section className="c-characters-list-layout" role="main">
       <Searcher value={searcherState} onChange={onChangeSearcher} />
-      <p className="c-characters-list-layout__results">{`${charactersState.length} results`}</p>
-      <div className="c-characters-list-layout__list">
+      <p
+        className="c-characters-list-layout__results"
+        aria-live="polite"
+      >{`${charactersState.length} results`}</p>
+      <ul className="c-characters-list-layout__list">
         {charactersState.map((c: ICharacter) => (
           <CharacterCard key={c.id} name={c.name} image={c.image} id={c.id} />
         ))}
-      </div>
-    </div>
+      </ul>
+    </section>
   );
 };

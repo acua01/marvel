@@ -17,6 +17,7 @@ export const FavButton: FC<TProps> = ({ className, character }) => {
     <button
       className={classNames('c-fav-button', className || '')}
       onClick={onClick}
+      aria-label={`Add ${character.name} to favorites`}
     >
       {isFav ? <FavOnIcon /> : <FavOffIcon />}
     </button>

@@ -1,5 +1,5 @@
 import { FC, ReactNode, createContext, useState } from 'react';
-import { ICharacter } from '../models/Character.model';
+import { ICharacter } from '../../../models/Character.model';
 
 type TFavsContext = {
   favs: ICharacter[];

@@ -18,8 +18,13 @@ export const ComicsSlider: FC<TProps> = ({ comics }) => {
   } = useComicsSliderController();
 
   return (
-    <div className="c-comics-slider">
-      <h2 className="c-comics-slider__title">Comics</h2>
+    <section
+      className="c-comics-slider"
+      aria-labelledby="comics-slider-heading"
+    >
+      <h2 className="c-comics-slider__title" id="comics-slider-heading">
+        Comics
+      </h2>
       <div
         className="c-comics-slider__comics-container"
         ref={containerRef}
@@ -28,6 +33,7 @@ export const ComicsSlider: FC<TProps> = ({ comics }) => {
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseLeave}
         onScroll={handleScroll}
+        role="list"
       >
         {comics.length > 0 ? (
           <>
@@ -44,6 +50,6 @@ export const ComicsSlider: FC<TProps> = ({ comics }) => {
           <p>Comics not found</p>
         )}
       </div>
-    </div>
+    </section>
   );
 };

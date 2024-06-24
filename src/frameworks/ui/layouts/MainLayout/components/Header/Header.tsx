@@ -7,14 +7,14 @@ export const Header: FC = () => {
   const { favs } = useHeaderController();
 
   return (
-    <header className="c-main-layout__header">
+    <header className="c-main-layout__header" role="navigation">
       <Link to={'/'}>
-        <img src="logo.svg" />
+        <img src="/logo.svg" alt="Marvel logo" />
       </Link>
 
       <Link className="c-main-layout__header__counter" to={'/favs'}>
         <FavOnIcon />
-        <span>{favs.length}</span>
+        <p aria-live="polite">{favs.length}</p>
       </Link>
     </header>
   );

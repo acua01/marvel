@@ -4,7 +4,7 @@ import { CharactersListLayout } from '../../layouts/CharactersListLayout/Charact
 import { useCharactersListPageController } from './hooks/useCharactersListPage.controller';
 import { ErrorMessage } from '../../components/ErrorMessage/ErrorMessage';
 
-const CharactersList: FC = () => {
+const CharactersListPage: FC = () => {
   const { characters, isLoading, error } = useCharactersListPageController();
 
   if (isLoading) return <Loader />;
@@ -14,4 +14,4 @@ const CharactersList: FC = () => {
   return <CharactersListLayout characters={characters} />;
 };
 
-export default CharactersList;
+export default CharactersListPage;
