@@ -1,9 +1,12 @@
 import { FC, useContext } from 'react';
 import { CharactersListLayout } from '../../layouts/CharactersListLayout/CharactersListLayout';
 import { FavsContext } from '../../contexts/favsContext';
+import { useScrollUp } from '../../hooks/useScrollUp';
 
-export const FavsList: FC = () => {
+const FavsList: FC = () => {
   const favsContext = useContext(FavsContext);
+
+  useScrollUp();
 
   const { favs } = favsContext;
 
@@ -13,3 +16,5 @@ export const FavsList: FC = () => {
     </div>
   );
 };
+
+export default FavsList;

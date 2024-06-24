@@ -1,6 +1,9 @@
 .c-comics-slider {
   width: 63.5%;
   padding: 40px 0;
+  @media screen and (max-width:1200px) {
+    width: calc(100% - 80px);
+  }
   &__title {
     text-transform: uppercase;
     font-size: 32px;
@@ -9,7 +12,7 @@
   &__comics-container {
     gap: 10px;
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
     width: 100%;
     cursor: grab;
     user-select: none;
@@ -20,7 +23,7 @@
       height: 4px;
     }
     &::-webkit-scrollbar-thumb {
-      background-color: #EC1D24;
+      background-color: $MARVEL_RED;
     }
     &.grabbing {
       cursor: grabbing;

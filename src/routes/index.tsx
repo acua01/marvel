@@ -1,15 +1,25 @@
-import { FC } from 'react';
+import { FC, Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { CharactersList } from '../pages/CharactersList/CharactersList';
-import { CharacterDetails } from '../pages/CharacterDetails/CharacterDetails';
-import { FavsList } from '../pages/FavsList/FavsList';
+import { Loader } from '../components/Loader/Loader';
 
-export const AppRoutes: FC = () => {
+const CharacterList = lazy(
+  () => import('../pages/CharactersList/CharactersList'),
+);
+const FavsList = lazy(() => import('../pages/FavsList/FavsList'));
+const CharacterDetails = lazy(
+  () => import('../pages/CharacterDetails/CharacterDetails'),
+);
+
+const AppRoutes: FC = () => {
   return (
-    <Routes>
-      <Route path="/" element={<CharactersList />} />
-      <Route path="/favs" element={<FavsList />} />
-      <Route path="/:characterId" element={<CharacterDetails />} />
-    </Routes>
+    <Suspense fallback={<Loader />}>
+      <Routes>
+        <Route path="/" Component={CharacterList} />
+        <Route path="/favs" Component={FavsList} />
+        <Route path="/:characterId" Component={CharacterDetails} />
+      </Routes>
+    </Suspense>
   );
 };
+
+export default AppRoutes;

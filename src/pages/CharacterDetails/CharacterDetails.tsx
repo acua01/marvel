@@ -4,7 +4,7 @@ import { useCharacterDetailsController } from './hooks/useCharacterDetails.contr
 import { FavButton } from '../../components/FavButton/FavButton';
 import { Loader } from '../../components/Loader/Loader';
 
-export const CharacterDetails: FC = () => {
+const CharacterDetails: FC = () => {
   const { character, details, comics, isLoading } =
     useCharacterDetailsController();
 
@@ -40,3 +40,5 @@ export const CharacterDetails: FC = () => {
     </div>
   );
 };
+
+export default CharacterDetails;

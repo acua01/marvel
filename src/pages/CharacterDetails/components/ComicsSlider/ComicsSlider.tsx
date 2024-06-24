@@ -72,14 +72,20 @@ export const ComicsSlider: FC<TProps> = ({ comics }) => {
         onMouseLeave={handleMouseLeave}
         onScroll={handleScroll}
       >
-        {comics.map((c: IComic) => (
-          <Comic
-            key={c.title}
-            title={c.title}
-            year={c.date.getFullYear()}
-            image={c.image}
-          />
-        ))}
+        {comics.length > 0 ? (
+          <>
+            {comics.map((c: IComic) => (
+              <Comic
+                key={c.title}
+                title={c.title}
+                year={c.date.getFullYear()}
+                image={c.image}
+              />
+            ))}
+          </>
+        ) : (
+          <p>Comics not found</p>
+        )}
       </div>
     </div>
   );

@@ -1,10 +1,9 @@
 .c-character-card {
-  width: 188px;
   color: white;
   cursor: pointer;
   text-decoration: none;
   &:hover &__name-container::before {
-    top: 0; /* Mueve la capa de fondo rojo hacia abajo al hacer hover en el contenedor grande */
+    top: 0;
   }
   &:hover &__name-container__fav-button > svg > path {
     fill: white;
@@ -12,7 +11,7 @@
   &__image-container {
     width: 100%;
     background-color: gray;
-    border-bottom: 5px solid red;
+    border-bottom: 5px solid $MARVEL_RED;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,7 +28,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 15px;
-    background-color: black;
+    background-color: $MARVEL_BLACK;
     clip-path: polygon(0 0, 100% 0%, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
     &::before {
       content: '';
@@ -38,7 +37,7 @@
       position: absolute;
       top: -100%;
       left: 0;
-      background-color: red;
+      background-color: $MARVEL_RED;
       transition: top .3s ease;
       z-index: 1;
     }
