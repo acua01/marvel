@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/4</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/3</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -114,23 +114,31 @@
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -176,12 +184,14 @@ const CharacterDetailsPage: FC = () =&gt; {
   const { character, details, comics, isLoading, errorComics, errorDetails } =
     useCharacterDetailsPageController();
 &nbsp;
+  console.log('errors', errorComics, errorDetails);
+&nbsp;
   if (isLoading) return &lt;Loader /&gt;;
   if (errorComics || errorDetails)
     return (
       &lt;ErrorMessage message="An error has occurred getting character details" /&gt;
     );
-<span class="cstat-no" title="statement not covered" >  if (!character || !details || !comics) <span class="cstat-no" title="statement not covered" >return null;</span></span>
+  if (!character || !details || !comics) return null;
 &nbsp;
   return (
     &lt;section className="c-character-details" role="main"&gt;
@@ -193,7 +203,9 @@ const CharacterDetailsPage: FC = () =&gt; {
           &lt;figure className="c-character-details__character__content__image-container"&gt;
             &lt;img
               className="c-character-details__character__content__image-container__image"
-              src={details.image ?? 'image_not_found.svg'}
+              src={details.image || 'image_not_found.svg'}
+              alt={details.name}
+              title={details.name}
             /&gt;
           &lt;/figure&gt;
           &lt;article className="c-character-details__character__content__info-container"&gt;
@@ -205,7 +217,7 @@ const CharacterDetailsPage: FC = () =&gt; {
               /&gt;
             &lt;/div&gt;
             &lt;p className="c-character-details__character__content__info-container__description"&gt;
-              {details.description ?? 'Description not found'}
+              {details.description || 'Description not found'}
             &lt;/p&gt;
           &lt;/article&gt;
         &lt;/div&gt;
@@ -223,7 +235,7 @@ export default CharacterDetailsPage;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-24T18:43:15.060Z
+                at 2024-06-25T18:40:03.257Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

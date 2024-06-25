@@ -15,9 +15,9 @@ const AppRoutes: FC = () => {
   return (
     <Suspense fallback={<Loader />}>
       <Routes>
-        <Route path="/" Component={CharacterListPage} />
         <Route path="/favs" Component={FavsListPage} />
         <Route path="/:characterId" Component={CharacterDetailsPage} />
+        <Route path="/" Component={CharacterListPage} />
         <Route path="*" Component={NotFoundPage} />
       </Routes>
     </Suspense>

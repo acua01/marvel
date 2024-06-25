@@ -17,7 +17,10 @@ export const getCharactersAdapter = async () => {
     (c: TApiItem) => ({
       id: c.id,
       name: c.name,
-      image: `${c.thumbnail.path}.${c.thumbnail.extension}`,
+      image:
+        c.thumbnail.path && c.thumbnail.extension
+          ? `${c.thumbnail.path}.${c.thumbnail.extension}`
+          : '',
     }),
   );
 
@@ -35,6 +38,9 @@ export const getCharacterDetailsAdapter = async (characterId: string) => {
     id: data.id,
     name: data.name,
     description: data.description,
-    image: `${data.thumbnail.path}.${data.thumbnail.extension}`,
+    image:
+      data.thumbnail.path && data.thumbnail.extension
+        ? `${data.thumbnail.path}.${data.thumbnail.extension}`
+        : '',
   } as ICharacterDetails;
 };
