@@ -6,7 +6,8 @@
 
 ## Instalación
 
-1. Descargar el proyecto con el comando `prueba`
+1. Descargar el proyecto `git clone https://github.com/acua01/marvel.git`
+2. Ejecutar `npm i`
 
 # Despliegue
 
