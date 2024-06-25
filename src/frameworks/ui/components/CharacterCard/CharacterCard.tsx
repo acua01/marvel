@@ -10,11 +10,16 @@ type TProps = {
 
 export const CharacterCard: FC<TProps> = ({ id, name, image }) => (
   <li>
-    <Link className="c-character-card" to={`/${id}`} aria-labelledby={name}>
+    <Link
+      className="c-character-card"
+      to={`/${id}`}
+      aria-labelledby={name}
+      aria-label={`Go to ${name} details`}
+    >
       <figure className="c-character-card__image-container">
         <img
           className="c-character-card__image-container__image"
-          src={image ?? 'image_not_found.svg'}
+          src={image || 'image_not_found.svg'}
           alt={name}
           title={name}
         />

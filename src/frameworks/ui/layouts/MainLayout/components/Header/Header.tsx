@@ -8,11 +8,15 @@ export const Header: FC = () => {
 
   return (
     <header className="c-main-layout__header" role="navigation">
-      <Link to={'/'}>
+      <Link to={'/'} aria-label="Go to character list">
         <img src="/logo.svg" alt="Marvel logo" />
       </Link>
 
-      <Link className="c-main-layout__header__counter" to={'/favs'}>
+      <Link
+        className="c-main-layout__header__counter"
+        to={'/favs'}
+        aria-label="Go to favs page"
+      >
         <FavOnIcon />
         <p aria-live="polite">{favs.length}</p>
       </Link>

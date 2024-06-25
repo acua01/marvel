@@ -1,7 +1,12 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Loader } from './Loader';
-import { test } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
-test('renders learn react link', () => {
-  render(<Loader />);
+describe('Loader tests', () => {
+  it('Render', () => {
+    render(<Loader />);
+
+    const loader = screen.getByRole('status');
+    expect(loader).toBeInTheDocument();
+  });
 });

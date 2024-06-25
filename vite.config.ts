@@ -6,7 +6,7 @@ import react from '@vitejs/plugin-react-swc';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: 'https://acua01.github.io/marvel',
+  // base: 'https://acua01.github.io/marvel',
   test: {
     environment: 'jsdom',
     setupFiles: './src/frameworks/__tests__/setup.ts',

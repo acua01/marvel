@@ -9,6 +9,8 @@ const CharacterDetailsPage: FC = () => {
   const { character, details, comics, isLoading, errorComics, errorDetails } =
     useCharacterDetailsPageController();
 
+  console.log('errors', errorComics, errorDetails);
+
   if (isLoading) return <Loader />;
   if (errorComics || errorDetails)
     return (
@@ -26,7 +28,9 @@ const CharacterDetailsPage: FC = () => {
           <figure className="c-character-details__character__content__image-container">
             <img
               className="c-character-details__character__content__image-container__image"
-              src={details.image ?? 'image_not_found.svg'}
+              src={details.image || 'image_not_found.svg'}
+              alt={details.name}
+              title={details.name}
             />
           </figure>
           <article className="c-character-details__character__content__info-container">
@@ -38,7 +42,7 @@ const CharacterDetailsPage: FC = () => {
               />
             </div>
             <p className="c-character-details__character__content__info-container__description">
-              {details.description ?? 'Description not found'}
+              {details.description || 'Description not found'}
             </p>
           </article>
         </div>

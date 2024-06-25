@@ -6,7 +6,7 @@ import { AppProvider } from '../ui/components/AppProvider/AppProviderTest';
 describe('Characters List Page tets', () => {
   it('should render Loader when isLoading is true', () => {
     render(
-      <AppProvider>
+      <AppProvider mode="development">
         <FavsListPage />
       </AppProvider>,
     );

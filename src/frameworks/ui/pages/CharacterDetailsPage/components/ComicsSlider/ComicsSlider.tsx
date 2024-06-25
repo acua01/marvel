@@ -14,7 +14,7 @@ export const ComicsSlider: FC<TProps> = ({ comics }) => {
     handleMouseLeave,
     handleMouseMove,
     handleMouseUp,
-    handleScroll,
+    // handleScroll,
   } = useComicsSliderController();
 
   return (
@@ -32,7 +32,7 @@ export const ComicsSlider: FC<TProps> = ({ comics }) => {
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseLeave}
-        onScroll={handleScroll}
+        // onScroll={handleScroll}
         role="list"
       >
         {comics.length > 0 ? (

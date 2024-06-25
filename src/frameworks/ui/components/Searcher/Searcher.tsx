@@ -6,7 +6,7 @@ type TProps = {
 };
 
 export const Searcher: FC<TProps> = ({ value, onChange }) => (
-  <fieldset className="c-searcher" role="search">
+  <fieldset className="c-searcher" role="searchbox">
     <label id="search-label" htmlFor="search-input">
       <img
         className="c-searcher__icon"
@@ -22,6 +22,7 @@ export const Searcher: FC<TProps> = ({ value, onChange }) => (
       onChange={onChange}
       placeholder="Search a character..."
       aria-labelledby="search-label"
+      role="search"
     />
   </fieldset>
 );

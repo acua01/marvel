@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">28.57% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/7</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -94,8 +94,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -105,17 +105,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { axiosClient } from '../frameworks/api/axiosClient';
 import { API_CREDENTIALS } from '../constants/api';
@@ -132,17 +132,17 @@ export const getComicsByCharacterAdapter = async (characterId: string) =&gt; {
     dates: { type: string; date: string }[];
   };
 &nbsp;
-  const comics: IComic[] = <span class="cstat-no" title="statement not covered" >response.data.data.results.map(<span class="fstat-no" title="function not covered" >(c</span>: TApiItem) =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+  const comics: IComic[] = response.data.data.results.map((c: TApiItem) =&gt; ({
     title: c.title,
     image: `${c.thumbnail.path}.${c.thumbnail.extension}`,
-    date: new Date(c.dates.find(<span class="fstat-no" title="function not covered" >(d</span>) =&gt; <span class="cstat-no" title="statement not covered" >d.type === 'onsaleDate')?.d</span>ate || ''),
+    date: new Date(c.dates.find((d) =&gt; d.type === 'onsaleDate')?.date || ''),
   }));
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  comics.sort(<span class="fstat-no" title="function not covered" >(a</span>: IComic, b: IComic) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    return a.date.getTime() + b.date.getTime();</span>
+  comics.sort((a: IComic, b: IComic) =&gt; {
+    return a.date.getTime() + b.date.getTime();
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return comics;</span>
+  return comics;
 };
 &nbsp;</pre></td></tr></table></pre>
 
@@ -151,7 +151,7 @@ export const getComicsByCharacterAdapter = async (characterId: string) =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-24T18:43:15.060Z
+                at 2024-06-25T18:40:03.257Z
             </div>
         <script src="../prettify.js"></script>
         <script>
