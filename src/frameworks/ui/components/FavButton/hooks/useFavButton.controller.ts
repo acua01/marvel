@@ -3,7 +3,7 @@ import { FavsContext } from '../../../context/favsContext';
 import { getIsFav } from '../../../../../utils/getIsFav';
 import { ICharacter } from '../../../../../models/Character.model';
 
-export const useFavButton = (character: ICharacter) => {
+export const useFavButtonController = (character: ICharacter) => {
   const favsContext = useContext(FavsContext);
   const { favs, addFav, removeFav } = favsContext;
 

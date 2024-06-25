@@ -3,8 +3,8 @@ import { ICharacter } from '../../../models/Character.model';
 
 type TFavsContext = {
   favs: ICharacter[];
-  addFav?: (character: ICharacter) => void;
-  removeFav?: (character: ICharacter) => void;
+  addFav: (character: ICharacter) => void;
+  removeFav: (character: ICharacter) => void;
 };
 
 type TProviderProps = {
@@ -13,6 +13,8 @@ type TProviderProps = {
 
 export const FavsContext = createContext<TFavsContext>({
   favs: [],
+  addFav: () => {},
+  removeFav: () => {},
 });
 
 export const FavsProvider: FC<TProviderProps> = ({ children }) => {

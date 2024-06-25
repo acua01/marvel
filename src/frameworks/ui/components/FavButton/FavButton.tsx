@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { FavOffIcon } from '../../icons/FavOffIcon';
 import { FavOnIcon } from '../../icons/FavOnIcon';
 import { ICharacter } from '../../../../models/Character.model';
-import { useFavButton } from './hooks/useFavButton.controller';
+import { useFavButtonController } from './hooks/useFavButton.controller';
 
 type TProps = {
   className?: string;
@@ -11,7 +11,7 @@ type TProps = {
 };
 
 export const FavButton: FC<TProps> = ({ className, character }) => {
-  const { onClick, isFav } = useFavButton(character);
+  const { onClick, isFav } = useFavButtonController(character);
 
   return (
     <button

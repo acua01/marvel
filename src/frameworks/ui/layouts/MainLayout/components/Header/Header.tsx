@@ -9,7 +9,7 @@ export const Header: FC = () => {
   return (
     <header className="c-main-layout__header" role="navigation">
       <Link to={'/'} aria-label="Go to character list">
-        <img src="/logo.svg" alt="Marvel logo" />
+        <img src="logo.svg" alt="Marvel logo" />
       </Link>
 
       <Link
