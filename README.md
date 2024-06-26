@@ -65,7 +65,7 @@ La estructuración de directorios del proyecto aplicando esta arquitectura, con 
   - **utils**: Funciones globales reutilizables.
   - **frameworks**: Todo lo referente a librerías.
 
-Dentro de "frameworks" se encuentra el directorio "ui" que contiene todos los componentes, vistas y layouts de React. En la raíz se encuentra los componentes y hooks globales que se reutilizan en la aplicación; y luego cada componente, vista o layout contiene sus propios componentes, funciones y hooks.
+Dentro de **frameworks** se encuentra el directorio **ui** que contiene todos los componentes, vistas y layouts de React. En la raíz se encuentra los componentes y hooks globales que se reutilizan en la aplicación; y luego cada componente, vista o layout contiene sus propios componentes, funciones y hooks.
 
 A la hora de escribir el código se han empleado algunos de los principios **SOLID** con el mismo fin comentado anteriormente de lograr un mejor código. También se ha utilizado un patrón de diseño en el que dentro de una página o componente se separa la lógica de lo que es la interfaz gráfica. La lógica queda en un hook al que llamo controlador ya que se encarga de manejarla.
 
