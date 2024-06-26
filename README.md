@@ -1,25 +1,26 @@
-# Iniciar el proyecto
+# Prueba técnica React
+La aplicación se encuentra desplegada en **GitHub Pages**: https://acua01.github.io/marvel
 
-## Requisitos
+## Iniciar el proyecto
+
+### Requisitos
 - Tener instalado node y npm en sus últimas versiones estables.
 
-## Instalación
+### Instalación
 1. Descargar el proyecto `git clone https://github.com/acua01/marvel.git`
 2. Instalar las dependencias `npm i`
 
-## Modo desarrollo
+### Modo desarrollo
 Ejecutar `npm run dev` y se inicializará el servidor de desarrollo en el puerto **5173**
 
-## Modo producción
+### Modo producción
 1. Ejecutar `npm run build`.
 2. Una vez se haya creado la build del proyecto ejecutar `npm run serve` y se inicializará el servidor de producción en el puerto **5000**
 
-## Testing
+### Testing
 Para lanzar los tests se debe de ejecutar `npm run test`
 
-# Despliegue
 
-La aplicación se encuentra desplegada aquí https://acua01.github.io/marvel
 
 # Tecnologías
 - **React** junto a **TypeScript** debido a las ventajas que presenta sobe JavaScript como lo es el tipado, ya que con esto se evitan muchos errores en el desarrollo. Dentro de esta se han utilizado **Hooks** para los estados y **Custom Hooks** para la refactorización de la lógica, junto con la componetización.
