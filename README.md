@@ -31,6 +31,7 @@ Para lanzar los tests se debe de ejecutar `npm run test`
 - **SASS** junto a la metodología **BEMIT** o **BEM + ITCSS** para todo el estilado, animación y responsive de la aplicación.
 - **Animate.css** para algunas animaciones.
 - **Vitest** junto con **Testing Library** para los tests.
+- **EsLint** y **Prettier** para el formateo y mejorar la calidad del código.
 
 # Arquitectura
 El proyecto ha sido estructurado con la "Clean Architecture" con el fin de tener un código limpio, fácil de entender y mantenible. Esta arquitectura es similar a la hexagonal ya que es representada con capas, de tal manera que la lógica de negocio queda separada de la implementación ayudando así a tener más facilidad y flexibilidad a la hora de implementar cambios. Estas son las capas con las que se suele trabajar en esta arquitectura:
