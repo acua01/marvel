@@ -14,7 +14,7 @@ La aplicación se encuentra desplegada en **GitHub Pages**: [Marvel App](https:/
 Ejecutar `npm run dev` y se inicializará el servidor de desarrollo en el puerto **5173**
 
 ### Modo producción
-1. Ejecutar `npm run build`.
+1. Ejecutar `npm run build`
 2. Una vez se haya creado la build del proyecto ejecutar `npm run serve` y se inicializará el servidor de producción en el puerto **5000**
 
 ### Testing
