@@ -1,5 +1,5 @@
 # Prueba técnica React
-La aplicación se encuentra desplegada en **GitHub Pages**: https://acua01.github.io/marvel
+La aplicación se encuentra desplegada en **GitHub Pages**: [Marvel App](https://acua01.github.io/marvel)
 
 ## Iniciar el proyecto
 
