@@ -9,8 +9,6 @@ const CharacterDetailsPage: FC = () => {
   const { character, details, comics, isLoading, errorComics, errorDetails } =
     useCharacterDetailsPageController();
 
-  console.log('errors', errorComics, errorDetails);
-
   if (isLoading) return <Loader />;
   if (errorComics || errorDetails)
     return (
